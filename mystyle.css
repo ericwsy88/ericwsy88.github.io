@@ -9,3 +9,16 @@ img {
 h2{
 	font-size : 18.72px;
 }
+.button {
+  background-color: blue;
+  border-style: groove;
+  border-width: 3px;
+  color: white;
+  padding: 4px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 5px;
+  cursor: pointer;
+}
