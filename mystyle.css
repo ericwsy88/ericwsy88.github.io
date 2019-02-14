@@ -9,7 +9,7 @@ img {
 h2{
 	font-size : 18.72px;
 }
-.button {
+button {
   background-color: blue;
   border-style: groove;
   border-width: 3px;
