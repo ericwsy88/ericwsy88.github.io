@@ -37,11 +37,13 @@ I'm taking this class because I want to learn how to make websites and have the 
 <button class="button">Start animation</button>
 <script> 
 $(document).ready(function(){
-  $("button").click(function(){
-	$( "botton" ).animate({ color: "rgb( 250, 20, 120 )"},'slow');
-	$( "h1" ).animate({fontsize= '200%'}).animate({fontsize = '100%'});
-}); 
+  $(".button").click(function(){
+    $("h1").animate({fontSize: "3em"}, "slow");
+        $("h1").animate({fontSize: "2em"}, "slow");
+        $("h1").css("color", "red");
+        $("img").css('border', "solid 2px red");
   });
+});
 </script> 
 </body>
 </html>
