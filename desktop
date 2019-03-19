@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <script src="detectmobilebrowser.js"></script>
+  	<title> Short task 1 </title>
+	</script>
+</head>
+<body>
+	<h1> This is the desktop version of my web page.</h1>
+	<p> 3 capabilities of WURFL: </p>
+	<dl>
+		<dt>has_cellular_radio</dt>
+		<dd>Shows whether the mobile device that made the request has the capibility of a phone or not</dd>
+		<dt>can_assign_phone_number</dt>
+		<dd>Showing if it's a mobile phone and whether it has a phone number associated to it</dd>
+		<dt>built_in_camera</dt>
+		<dd>Testing whether this mobile device has a camera and wheter it's allowed to take a picture.</dd>
+	</dl>
+</body>
+</html>
+
