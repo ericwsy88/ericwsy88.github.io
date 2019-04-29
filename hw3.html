@@ -106,6 +106,42 @@
         <header data-role="header">
         <h1>Location</h1>
         </header>
+	  <p>
+    <input type="button" onclick="show_islocationenabled();" value="Find location?" />
+  </p>
+  <div id="str1"></div>
+  <div id="str2"></div>
+  <script>
+  
+    function get_coords(position)
+	{
+	latitude=position.coords.latitude;
+	longitude=position.coords.longitude;
+	 str2= ' - Latitute is '+latitude+' and longitude is '+longitude;
+	str = str1.concat(str2);
+		    document.getElementsByTagName('div')[0].textContent = str;
+	}
+	
+	function if_error(err)
+	{
+	if(err.code==1){str2= ' User denied'; str = str1.concat(str2);}
+	if(err.code==2){str2= ' Position unavailable'; str = str1.concat(str2);}
+	if(err.code==3){str2= ' Time Out'; str = str1.concat(str2);}
+		    document.getElementsByTagName('div')[0].textContent = str;
+	}
+	
+    function show_islocationenabled() {
+      var str = "geolocation is not supported.";
+
+      if (window.navigator.geolocation) {
+        str1 = "Location: ";
+		navigator.geolocation.getCurrentPosition(get_coords,if_error);
+		
+      }
+    }
+	
+
+  </script>
         <div class="container">
             <h2>places</h2>
                 <p>More Info</p>
