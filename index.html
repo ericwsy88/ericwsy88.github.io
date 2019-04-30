@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Simple use of Service Worker">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>HW4</title>
+    <script>
+      // Add a global error event listener early on in the page load, to help ensure that browsers
+      // which don't support specific functionality still end up displaying a meaningful message.
+      window.addEventListener('error', function(error) {
+        if (ChromeSamples && ChromeSamples.setStatus) {
+          console.error(error);
+          ChromeSamples.setStatus(error.message + ' (Your browser may not support this feature.)');
+          error.preventDefault();
+        }
+      });
+    </script>
+    
+    <link rel="stylesheet" href="styles69.css">
+    
+  </head>
+
+  <body>
+    
+    <h1>What is PWA</h1>
+    <p>PWA is web applications that load like regular web pages or websites but can offer the user functionality such as working offline, push notifications, and device hardware access traditionally available only to native applications.</p>
+
+    <label for="images">Choose background:</label>
+    <select id="images">
+      <option value="lightblue.jpg">Light blue</option>
+      <option value="lightgold.jpg">Light gold</option>
+    </select>
+    <button id="show">Confirm</button>
+    <div id="container"></div>
+      
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js');
+        }
+
+        document.querySelector('#show').addEventListener('click', () => {
+          const iconUrl = document.querySelector('select').selectedOptions[0].value;
+          let imgElement = document.createElement('img');
+          imgElement.src = iconUrl;
+          document.querySelector('#container').appendChild(imgElement);
+        });
+      </script>
+
+  </body>
+</html>
